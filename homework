@@ -1,0 +1,72 @@
+1번 코딩
+#include<stdio.h>
+#include<stdlib.h>
+int main(int n, char* v[]) 
+{
+	int a, b, c;
+	printf("%d\n", n);
+	if (n < 4) 
+	{
+		printf("매개변수가 모자라요");
+		exit(0);
+	}
+	a = atoi(v[1]);
+	b = atoi(v[3]);
+	switch (v[2][0]) 
+	{
+		case '+': c = a + b; break;
+		case '-': c = a - b; break;
+		case '*': c = a * b; break;
+		case '/': c = a / b; break;
+		case '%': c = a % b; break;
+		default: break;
+	}
+	printf("%d\n", c);
+}
+
+
+2번 코딩
+#include<stdio.h>
+#include<stdlib.h>
+int add(int a, int b) {
+	return a + b;
+}
+int main()
+{
+	int a, b;
+	FILE* fp = fopen("my.txt", "r");
+	if (fp == NULL) { 
+		puts("File not Found");
+		exit(0); }
+	fscanf(fp, "%d %d", &a, &b);
+	fclose(fp);
+	printf("%d\n", add(a, b));
+}
+
+3번
+const char* 를 이용하여 apple,kiwi,banana를 배열에 넣고
+for문을 이용하여 화면에 출력하시오.
+
+코딩
+#include<stdio.h>
+int main() {
+	const char* c[] = { "apple","kiwi","banana" };
+	int i;
+	for (i = 0; i < 3; i++)
+		printf("%s\n",c[i]);
+}
+
+4번 코딩
+#include<stdio.h>
+#include<string.h>
+struct user {
+	int a;
+	char n[80];
+}we[2] = { {18,"CSB"},{16,"CSH"} };
+int main() {
+	struct user* p;
+	p = we;
+	printf("%d %s\n",p->a,p->n);
+  ++p;
+	printf("%d %s", p->a,p->n);
+}
